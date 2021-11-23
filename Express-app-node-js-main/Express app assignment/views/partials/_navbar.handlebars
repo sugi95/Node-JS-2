@@ -1,0 +1,41 @@
+
+<nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #044F67;">
+  <a class="navbar-brand" href="#">IdeaStore</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="/">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="/about">About</a>
+      </li>
+    </ul>
+    <ul class="navbar-nav ml-auto">
+        {{#if user}}
+        <li class="nav-item dropdown">    
+            <a href="#" class="nav-link dropdown-toggle active" data-toggle="dropdown" id="navBarDropDownMenuLink">Video links</a>
+            <div class="dropdown-menu">
+                <a href="/ideas/view" class="dropdown-item">View Ideas</a>
+                <a href="/ideas/add" class="dropdown-item">Add Ideas</a>
+            </div>
+        </li>
+        <li class="nav-item">
+              <a class="nav-link" href="/users/logout">Logout</a>
+            </li>
+        
+        {{else}}
+
+        <li class="nav-item">
+          <a class="nav-link" href="/users/login">Login</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/users/register">Sign Up</a>
+        </li>
+        {{/if}}
+
+    </ul>
+  </div>
+</nav>

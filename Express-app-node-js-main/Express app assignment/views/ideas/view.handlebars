@@ -1,0 +1,17 @@
+
+
+<h3 class="ml-5 mt-4 mb-3">Your Ideas</h3>
+
+{{#each ideas}}
+    <div class="card card-body mb-1 mr-5 ml-5 mt-3">
+        <h3>{{title}}</h3>
+        <p>{{description}}</p>
+        <a href="/ideas/edit/{{id}}" class="btn mb-3 btn-dark" >Edit</a>
+        <form method="POST" action="/ideas/{{id}}?_method=DELETE">
+            <input type="hidden" name="_method" value="DELETE"> 
+            <input type="submit" class="btn btn-danger btn-block" value="Delete">
+        </form>
+    </div> 
+{{else}}
+    <p style="text-align : center">Sorry No Ideas Listed</p>
+{{/each}}
